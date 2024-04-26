@@ -1,0 +1,59 @@
+\documentclass{template}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{svg}
+\usepackage{amsmath}
+
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+
+% \usepackage{citeall}
+\nocite{*}
+% \usepackage[table,xcdraw]{xcolor}
+% \usepackage{titlesec}
+% \titleformat{\chapter}[display]
+%   {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\project{Project Report}
+\title{Performance Evaluation of LoRa/LoRaWAN as a
+Communication Means for Earthquake-related
+Disaster Management}
+\author{Mathotaarachchi M.M.  \textbf{190388D}\\
+        Ranasinghe R.A.D.V.C. \textbf{190497K}\\
+        Thenuwara T.A. \textbf{190631T}\\
+        Udara A.G.N. \textbf{190636M}}
+\supervisor{\LARGE{Prof.(Mrs)Dileeka Dias}\\ \LARGE{Dr.Samiru Gayan}}
+\faculty{Engineering}
+\department{Electronic and Telecommunication Engineering}
+\abst{
+In this report, we will cover the feasibility of the final year project of group 15, Titled \textbf{Performance Evaluation of LoRa/LoRaWAN as a Communication Means for Earthquake-related Disaster Management}. This report is a fulfilment to the initial feasibility evaluation report of the Module \textbf{EN4202} Final year project. The LoRa is communication technique introduced by The Semtech Corporation. An early earthquake system which is currently being introduced to the New Zealand by the team of Prof. Raj Prasanna and his team and, this project is a collaboration with their team. Targeted for Low power and Long range applications, managing a reliable low latency network between the sensor devices though a LoRaWAN and introducing a proper architecture for the application is one of the main end goals. Also, creating a LoRaWAN monitoring tool and, Providing a communication method to moniter the status of buildings using already available sensor networks without approaching the building in a post disaster situation is our other main goals with this project.
+\small{\textbf{Keywords}- Earthquake Early Warning, LoRa, LoRaWAN, Post disaster, Networking, Monitoring Tool}}
+
+\include{acronyms}
+
+\begin{document}
+
+% \include{1_introduction}
+% \include{2_literature_review}
+% \include{3_methodology}
+% \include{4_discussion_conclusion}
+
+\include{final}
+% You do not need to remove this even if you do not have appendices.
+% \appendix % Anything you add will belong to appendix from this point on.
+\newpage
+ \citeall 
+\printbibliography
+
+\end{document}

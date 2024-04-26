@@ -1,0 +1,17 @@
+\chapter{DISCUSSION \& CONCLUSION}
+
+\hspace{12pt}In the realm of literature, a notable void exists concerning the exploration of LoRa's latency dynamics. While theoretical frameworks have surfaced, proposing the exploitation of multi-hop configurations with lower spreading factors (SFs) to attain ranges akin to higher SFs but with reduced latency, practical investigations remain scarce. This concept underscores the potential to leverage multi-hop pathways of lower SFs, offering a promising avenue for substantial time savings compared to the reliance on higher SFs.\\
+
+Delving into a multi-hop scenario spanning 30 kilometers, a pivotal discovery emerged: the adoption of higher SFs (SF10, SF11, SF12) precipitated the arrival of seismic waves preceding warning messages across a considerable expanse within the 30 km radius. Conversely, lower SFs yielded seismic wave arrivals preceding warnings in only negligible areas, thus signifying a critical distinction. Notably, these simulations were meticulously crafted to mirror urban environments, adding depth to the analysis.\\
+
+Within our proposed LoRa-based Early Earthquake Warning System (EEWS) communication framework, we delineate two primary node classifications: relay nodes and end nodes. Through exhaustive scrutiny of diverse placement strategies, a consensus crystallized around the efficacy of deploying relay nodes in a quasi-square grid configuration, imbued with subtle random perturbations to emulate real-world complexities. This nuanced approach yielded optimal outcomes, addressing the inherent challenge of perfect grid impracticality.\\
+
+A pivotal axis of consideration in our discourse pertains to latency optimization, complemented by a steadfast commitment to cost-effectiveness. The strategic deployment of higher SFs inherently engenders diminished relay density, thereby yielding cost savings. However, this approach risks engendering larger blind zones and an elevated incidence of unreached end nodes. Conversely, lower SFs promise diminished blind zones, albeit at the expense of heightened relay node density and concomitant cost escalation.\\
+
+Among the myriad SF options, SF7 emerges as an intriguing proposition, offering a judicious compromise by concurrently mitigating relay node density and conferring a notable time advantage. Nonetheless, the specter of increased unreached relay nodes due to collisions looms ominously. Ultimately, SF8 and SF9 emerge as the proverbial sweet spot, offering an optimal balance characterized by a judicious relay node density, the absence of unreached end nodes within the 30 km radius, and a commendable time advantage.\\
+
+Remarkably, SF8 yields a maximum node reach time of a mere 2.5 seconds, while SF9 marginally extends this to 4 seconds, both exemplifying commendable efficiency. Thus, we assert with conviction that LoRa constitutes a formidable communication conduit within EEWS frameworks, epitomizing robust performance in latency-sensitive contexts. 
+
+
+
+

@@ -1,0 +1,233 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+%\usepackage{indentfirst}
+%\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[figure,table]{totalcount}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\usepackage{lipsum}
+\usepackage{amsmath,amsfonts}
+% \usepackage{arydshln} % for dashed lines
+\usepackage{acro}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{minted}
+\setcounter{tocdepth}{3}% Include \subsubsection in ToC
+\setcounter{secnumdepth}{3}% Number \subsubsection
+
+\newminted{ruby}{fontfamily=courier,fontsize=\scriptsize,frame=multi,linenos=false,framesep=3mm,showspaces=false,breaklines}
+
+% \usepackage{subfig}
+
+% \usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{svg}
+\usepackage{amsmath}
+\bibliographystyle{plain}
+
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\newcommand{\projtitle}{Performance Evaluation of LoRa as a Communication Means for Earthquake-related Disaster Management }
+\newcommand{\module}{EN4202} % Or EN4202 or BM4200 
+\newcommand{\groupnumber}{Group 15}
+
+\newcommand{\memberone}{Mathotaarachchi M.M }
+\newcommand{\membertwo}{Ranasinghe R.A.D.V.C }
+\newcommand{\memberthree}{Thenuwara T.A}
+\newcommand{\memberfour}{Udara A.G.N}
+
+\newcommand{\memberoneid}{190388D}
+\newcommand{\membertwoid}{190497K}
+\newcommand{\memberthreeid}{190631T}
+\newcommand{\memberfourid}{190636M}
+
+
+\newcommand{\supervisorone}{Prof. Dileeka Dias}
+\newcommand{\supervisortwo}{Dr. Samiru Gayan}
+%\newcommand{\supervisorthree}{John Smith \hfill {18000}}
+
+\let\originaltable\table
+\let\endoriginaltable\endtable
+\renewenvironment{table}[1][htbp]{
+    \originaltable[#1]
+    \centering
+}{\endoriginaltable}
+
+
+\include{acronyms}
+
+\begin{document}
+
+\begin{titlepage}
+	
+
+	\centering
+	\includegraphics[width=3cm]{logo.png}\\[1cm] % Logo
+	
+	
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+	
+	
+	\textsc{\LARGE Department of Electronic and } \\ [.5cm] 
+	\textsc{\LARGE Telecommunication Engineering } \\[.75cm] 
+	\textsc{\Large University of Moratuwa}\\[0.25cm]
+	\textsc{\Large Sri Lanka}\\[3cm]
+	
+	
+	% \normalfont\bfseries\LARGE Performance Evaluation of LoRa as a Communication Means for Earthquake-related Disaster Management \\[1cm]
+ \textbf{\textsc{\LARGE  Performance Evaluation of LoRa as a }} \\ [.2cm] 
+ \textbf{\textsc{\LARGE  Communication Means for }} \\ [.2cm] 
+ \textbf{\textsc{\LARGE  Earthquake-related Disaster Management }} \\ [1cm] 
+ 
+ 
+ 
+	\textsc{\large Final Project Report}\\
+	\textsc{submitted in partial fulfillment of the requirements
+	for the course module \module}\\[0.25cm]
+	{\large \textsc{\today}}\\[3cm] % Date, change the \today to a set date if you want to be precise
+	
+
+\begin{minipage}{0.5\textwidth}
+	\begin{flushleft} \large
+		\textsc{Supervisors:} \\[.25cm]
+	\supervisorone\\ % Supervisor's Name
+	\supervisortwo \\% Supervisor's Name
+	\end{flushleft}
+\end{minipage}
+~	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\textsc{Members:\hfill \groupnumber}\\[.25cm] 
+			\memberone \hfill \memberoneid\\
+			\membertwo \hfill \membertwoid\\
+			\memberthree\hfill \memberthreeid\\
+			\memberfour\hfill \memberfourid\\
+		\end{flushleft}
+	\end{minipage}\\
+	
+\end{titlepage}
+
+
+\section*{} % Approval page
+Approval of the Department of Electronic \& Telecommunication Engineering\\[1cm]
+
+\begin{flushright}
+\begin{minipage}{.5\textwidth}
+
+. . . . . . . . . . . . . . . . . . . . . . .  \\ \\
+	Head, Department of Electronic \&\\
+	Telecommunication Engineering
+	
+\end{minipage}
+\end{flushright}
+
+\vspace*{2cm}
+\noindent
+This is to certify that I/we have read this project and that in my/our opinion it is fully adequate, in scope and quality, as an Undergraduate Graduation Project.
+\\[.5cm]
+
+\noindent
+Supervisor: \supervisorone \\[1cm]
+Signature: . . . . . . . . . . . . . . . . . . . . . . .  \\[1cm] 
+Date: . . . . . . . . . . . . . . . . . . . . . . . . . .  \\[1cm]
+\\[1cm]
+Supervisor: \supervisortwo \\[1cm]
+Signature: . . . . . . . . . . . . . . . . . . . . . . .  \\[1cm]
+Date: . . . . . . . . . . . . . . . . . . . . . . . . . .  \\[1cm]
+
+\newpage
+\section*{Declaration}
+
+This declaration is made on \today.
+\\[.25cm]
+
+We declare that the dissertation titled \projtitle and the work presented in it are our own. We confirm that:
+\begin{itemize}
+	\item this work was done wholly or mainly in candidature for a B.Sc.
+	Engineering degree at this
+	university,
+	\item where any part of this dissertation has previously been submitted for a degree or any other
+	qualification at this university or any other institute, has been clearly stated,
+	\item  where we have consulted the published work of others, is always clearly attributed,
+	\item  where we have quoted from the work of others, the source is always given.
+	\item with the exception of such quotations, this dissertation is entirely our own work,
+	\item  we have acknowledged all main sources of help,
+	\item  parts of this dissertation have been published.
+\end{itemize}
+
+\vspace{1cm}
+	\begin{minipage}{.3\textwidth}
+		........................................................................ \\
+		\textsc{Date}\\[1cm]
+		........................................................................ \\
+		\textsc{\memberone}  (\memberoneid) \\[1cm]
+		........................................................................ \\
+		\textsc{\membertwo}  (\membertwoid) \\[1cm]
+		........................................................................ \\
+		\textsc{\memberthree} (\memberthreeid) \\[1cm]
+		........................................................................ \\
+		\textsc{\memberfour} (\memberfourid) \\[1cm]
+		
+	\end{minipage}
+	
+
+
+
+
+\newpage
+\section*{Preface}
+This report was composed as partial fulfillment of the requirements of Module EN4202 - Project, in the curriculum of B.Sc. in Engineering (Electronic and Telecommunication) at the University of Moratuwa, Sri Lanka. The experience and knowledge that we gained during the final year project were used and were the inspiration to create this report.
+
+\newpage
+\section*{Acknowledgment}
+In the course of our final year project, we are indebted to numerous individuals whose invaluable support and guidance made this endeavor possible. We extend our heartfelt thanks to Dr. Ranga Rodrigo, the esteemed head of our department, along with all the lecturers and officials who worked tirelessly in identifying and providing us with promising project opportunities for our final year. Special appreciation goes to Dr. Mevan Gunawardena, our project coordinator, for the consistent guidance and support offered throughout this journey. Our deepest gratitude goes to our supervisor, Dr. Ranga Rodrigo, whose unwavering support, mentorship, and encouragement helped us surmount challenges and progress with our project. We are also grateful to Dr. Ranga Rodrigo for granting us access to the Baker server. Leveraging this valuable resource was instrumental in the successful execution of our project, allowing us to explore and implement advanced techniques.
+Another aspect we are thankful for is the insightful evaluations provided by the panel of lecturers. Their constructive feedback and valuable suggestions during the feasibility presentation, mid-progress presentations, final demonstration, and final presentation significantly contributed to the improvement of our project’s outcomes. Their valuable inputs helped us refine our approach and achieve more comprehensive results.
+
+We also extend our sincere appreciation to the technical experts who willingly shared their expertise with us. Their guidance and suggestions were instrumental in overcoming various technical challenges we encountered during the development of our project. Their willingness to offer assistance and share their
+knowledge played a crucial role in the successful completion of our work.
+Lastly, we would like to express our gratitude to Ms. Salgado, who provided us with valuable insights and constructive criticism on our project report. Her attention to detail and thoughtful suggestions significantly enhanced the clarity and readability of our final report.
+
+It is with immense gratitude that we acknowledge the support and assistance of all these individuals. Their contributions played a pivotal role in the successful completion of our final year project, and we are truly thankful for their encouragement, guidance, and mentorship.
+
+\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\printacronyms
+\newpage
+
+
+% \chapter{INTRODUCTION}
+% \ac{IOT}
+% Low-cost, accurate localization is an important research aspect in many areas as well as many applications, including vehicular applications. Localization allows vehicles to pinpoint their locations with the best accuracy. Accurate localization will benefit many vehicular applications such as crash management, traffic
+% management, improving pedestrian safety, improving fuel efficiency, etc.
+
+% Wireless communication technologies such as WiFi, ZigBee, Bluetooth, and Ultra-Wideband are being extensively researched to be adapted for vehicular localization. Currently, DSRC incorporated with highly accurate GPS, gives a higher performance for localization in vehicles when compared to other vehicular
+% communication methods used for localization. DSRC (IEEE802.11p) is an emerging wireless technology which is an adaptation of the IEEE 802.11 WiFi standard, designed for vehicular applications. It is specially designed for vehicular communications, capable of enabling high-speed and secure, vehicle-to-vehicle
+% (V2V) and vehicle-to-infrastructure (V2I) communication. However current implementations of DSRC with incorporated highly accurate GPS devices, are costly for vehicular localization. Therefore an alternative, low-cost approach should be investigated for localization.
+
+\include{intro}
+
+
+\include{literaturereview}
+
+\include{methodology}
+
+% \include{design}
+
+\include{results}
+
+\include{discussion}
+
+%\appendix
+
+%\bibliographystyle{unsrt}%Used BibTeX style is unsrt
+\bibliography{sample}
+
+\end{document}
